@@ -11,6 +11,10 @@
 
 #include "log.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 static const char format[] = "%Y-%m-%d %H:%M:%S";
 static char result[4 + 1 + 2 + 1 + 2 + 1 + 2 + 1 + 2 + 1 + 2 + 1];
 
@@ -22,3 +26,7 @@ char *get_local_time() {
     strftime(result, sizeof(result), format, tm_);
     return result;
 }
+
+#ifdef __cplusplus
+}
+#endif
